@@ -15,22 +15,37 @@ var groceryList = [
     price: 3.50},
   {name: "Salsa",
     price: 4.00}
-];function addName() {
+];
+
+function addName() {
  
 }
+
 for (var i=0; i<groceryList.length;i++){
-     
   total+=groceryList[i].price;
  
-        console.log(groceryList[i].name + " $" + groceryList[i].price.toFixed(2));  
+  // print 'name $price' to the console
+  console.log(groceryList[i].name + " $" + groceryList[i].price.toFixed(2)); 
+
+  // add 'name $price' to the HTML
   var printedList = document.createElement('div');
- 
-  printedList.innerHTML = groceryList[i].name + " $" + groceryList[i].price.toFixed(2);   document.body.appendChild(printedList);}groceryList.totalAmount = function(){   var total = 0;
-     for (var i = 0; i < groceryList.length; i++) {
-        total = total + groceryList[i].price;
-     }
+  var lineOfText = groceryList[i].name + " $" + groceryList[i].price.toFixed(2); 
+  printedList.innerHTML = lineOfText;
+  document.body.appendChild(printedList);
+}
+
+
+groceryList.totalAmount = function(){
+  var total = 0;
+  for (var i = 0; i < groceryList.length; i++) {
+     total = total + groceryList[i].price;
+  }
   return total.toFixed(2);
-};var printedTotal = document.createElement('div');printedTotal.innerHTML = "Total $ " +groceryList.totalAmount();document.body.appendChild(printedTotal);
+};
+
+var printedTotal = document.createElement('div');
+printedTotal.innerHTML = "Total $ " +groceryList.totalAmount();
+document.body.appendChild(printedTotal);
 console.log("Total: $"+total);
 
 
@@ -54,12 +69,3 @@ console.log("Total: $"+total);
 
 
 
-
-
-
-
-
-
-
-
-	]
